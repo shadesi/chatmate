@@ -41,12 +41,14 @@ Install the necessary npm packages:
 npm install
 
 Step 3: Firebase Configuration
-Go to the Firebase Console and create a new project.
+1. Go to the Firebase Console and create a new project.
 Add Firebase to your project:
-Go to Project Settings.
+
+2. Go to Project Settings.
 Under Your apps, select the Web icon.
 Copy the Firebase config object.
-In your project, open App.js and replace the Firebase configuration with your own:
+
+3. In your project, open App.js and replace the Firebase configuration with your own:
 
 const firebaseConfig = {
   apiKey: "YOUR_API_KEY",
