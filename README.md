@@ -1,4 +1,4 @@
-ChatMate App
+# ChatMate App
 
 ChatMate is a real-time chat application built using React Native with Expo, and integrates Firebase for authentication, Firestore for database management, and Firebase Cloud Storage for storing media files. The app allows users to send images, take photos, share their location, and exchange messages in real-time.
 
