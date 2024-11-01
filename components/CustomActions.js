@@ -37,7 +37,13 @@ const CustomActions = ({ wrapperStyle, iconTextStyle, storage, onSend, userID })
     if (permissions?.granted) {
       const location = await Location.getCurrentPositionAsync({});
       if (location) {
-        onSend({ location: { longitude: location.coords.longitude, latitude: location.coords.latitude } });
+        console.log('Location fetched:', location);
+        onSend([{ 
+          _id: Math.random().toString(36).substring(7),
+          createdAt: new Date(),
+          user: { _id: userID },
+          location: { longitude: location.coords.longitude, latitude: location.coords.latitude } 
+        }]);
       } else {
         Alert.alert("Error occurred while fetching location.");
       }
@@ -53,7 +59,12 @@ const CustomActions = ({ wrapperStyle, iconTextStyle, storage, onSend, userID })
     const blob = await response.blob();
     uploadBytes(newUploadRef, blob).then(async (snapshot) => {
       const imageURL = await getDownloadURL(snapshot.ref);
-      onSend({ image: imageURL });
+      onSend([{ 
+        _id: Math.random().toString(36).substring(7),
+        createdAt: new Date(),
+        user: { _id: userID },
+        image: imageURL 
+      }]);
     });
   };
 
